@@ -8,4 +8,8 @@ const nextConfig = {
     }
 }
 
+if (process.env.MODE === "standalone") {
+    nextConfig.output = "standalone" 
+};
+
 module.exports = nextConfig
