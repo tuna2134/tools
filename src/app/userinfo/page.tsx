@@ -49,7 +49,7 @@ const UserInfo = () => {
               </div>
               <br />
               <form onSubmit={resetSearch}>
-                <button className="bg-[#42c26a] hover:bg-[#57F287] py-1.5 px-3 rounded">再検索</button>
+                <button className="bg-[#42c26a] hover:bg-[#57F287] py-1.5 px-3 rounded text-white">再検索</button>
               </form>
             </div>
           </div>
@@ -65,7 +65,7 @@ const UserInfo = () => {
                 type="text" onChange={handleInputChange}
                 placeholder="ユーザーID"
               ></input>
-              <button className="ml-4 bg-[#42c26a] hover:bg-[#57F287] py-1.5 px-3 rounded">
+              <button className="ml-4 bg-[#42c26a] hover:bg-[#57F287] py-1.5 px-3 rounded text-white">
                 <p>検索</p>
               </button>
             </form>
