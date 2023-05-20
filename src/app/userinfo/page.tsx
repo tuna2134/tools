@@ -9,7 +9,12 @@ const UserInfo = () => {
   const [userid, setUserid] = useState<string>("");
   const [user, setUser] = useState<User | null>(null);
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
-    setUserid(event.target.value)
+    // IDかどうかチェック
+    if (isNaN(Number(event.target.value)) === false) {
+      setUserid(event.target.value)
+    } else {
+      event.target.setCustomValidity("ユーザーIDは数字のみです。");
+    }
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -61,11 +66,11 @@ const UserInfo = () => {
             <br />
             <form onSubmit={handleSubmit} className="">
               <input
-                className="border px-0.5 py-1.5 outline-none rounded"
+                className="border px-0.5 py-1.5 outline-none rounded indent-4"
                 type="text" onChange={handleInputChange}
-                placeholder="ユーザーID"
+                placeholder="ユーザーID" required
               ></input>
-              <button className="ml-4 bg-[#42c26a] hover:bg-[#57F287] py-1.5 px-3 rounded text-white">
+              <button className="ml-8 bg-[#42c26a] hover:bg-[#57F287] py-1.5 px-3 rounded text-white">
                 <p>検索</p>
               </button>
             </form>
