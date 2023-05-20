@@ -9,7 +9,7 @@ const Header = () => {
       <nav className="content-center">
         <ul className="flex content-center">
           <li className="content-center">
-            <Link href="/userinfo" className="hover:text-[#5865F2] text-2xl">userinfo</Link>
+            <Link href="/userinfo" className="hover:text-[#5865F2] text-2xl">ユーザー検索</Link>
           </li>
         </ul>
       </nav>

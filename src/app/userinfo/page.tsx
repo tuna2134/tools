@@ -48,22 +48,23 @@ const UserInfo = () => {
               </div>
               <br />
               <form onSubmit={resetSearch}>
-                <button className="bg-[#57F287] py-1.5 px-3 rounded">再検索</button>
+                <button className="bg-[#42c26a] hover:bg-[#57F287] py-1.5 px-3 rounded">再検索</button>
               </form>
             </div>
           </div>
         )
         : (
         <div className="flex items-center h-[75vh] box-border justify-center">
-          <div>
-            <h2 className="text-4xl py-4">Discord User Search</h2>
+          <div className="border p-6 rounded">
+            <h2 className="text-4xl">Discord User Search</h2>
+            <br />
             <form onSubmit={handleSubmit} className="">
               <input
-                className="border mx-1 px-0.5 py-1.5 outline-none rounded"
+                className="border px-0.5 py-1.5 outline-none rounded"
                 type="text" onChange={handleInputChange}
                 placeholder="ユーザーID"
               ></input>
-              <button className="bg-[#57F287] py-1.5 px-3 rounded">検索</button>
+              <button className="ml-4 bg-[#42c26a] hover:bg-[#57F287] py-1.5 px-3 rounded">検索</button>
             </form>
           </div>
         </div>
