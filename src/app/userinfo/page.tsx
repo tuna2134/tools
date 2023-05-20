@@ -64,7 +64,9 @@ const UserInfo = () => {
                 type="text" onChange={handleInputChange}
                 placeholder="ユーザーID"
               ></input>
-              <button className="ml-4 bg-[#42c26a] hover:bg-[#57F287] py-1.5 px-3 rounded">検索</button>
+              <button className="ml-4 bg-[#42c26a] hover:bg-[#57F287] py-1.5 px-3 rounded">
+                <p>検索</p>
+              </button>
             </form>
           </div>
         </div>
