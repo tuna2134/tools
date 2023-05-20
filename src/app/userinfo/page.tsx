@@ -3,6 +3,7 @@
 import { fetchUser, User } from "./_actions"
 import { FormEvent, ChangeEvent, useState } from "react"
 import UserData from "./_components"
+import Image from "next/image"
 
 const UserInfo = () => {
   const [userid, setUserid] = useState<string>("");
@@ -37,11 +38,12 @@ const UserInfo = () => {
                   <UserData name="ユーザーID" value={user.id} />
                   <UserData name="ユーザータグ" value={user.discriminator} />
                 </div>
-                <img
+                <Image
                   src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`}
                   className="rounded-full h-32 w-32"
+                  alt="user icon"
                 >
-                </img>
+                </Image>
               </div>
               <br />
               <form onSubmit={resetSearch}>
