@@ -39,8 +39,8 @@ const UserInfo = () => {
                   <UserData name="ユーザータグ" value={user.discriminator} />
                 </div>
                 <Image
-                  src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`}
-                  className="rounded-full h-32 w-32"
+                  src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}?size=32`}
+                  className="rounded h-32 w-32"
                   width={32} height={32}
                   alt="user icon"
                 >
