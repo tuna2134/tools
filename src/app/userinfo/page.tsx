@@ -37,6 +37,7 @@ const UserInfo = () => {
                   <UserData name="ディスプレイ名" value={user.display_name} />
                   <UserData name="ユーザーID" value={user.id} />
                   <UserData name="ユーザータグ" value={user.discriminator} />
+                  <UserData name="Botかどうか" value={user.bot ? "はい" : "いいえ"}/>
                 </div>
                 <Image
                   src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}?size=32`}

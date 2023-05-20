@@ -8,6 +8,7 @@ export interface User {
   discriminator: string;
   avatar: string;
   display_name: string;
+  bot: boolean;
 };
 
 export const fetchUser = async (userid: string): Promise<User> => {
