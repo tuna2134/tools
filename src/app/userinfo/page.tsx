@@ -41,6 +41,7 @@ const UserInfo = () => {
                 <Image
                   src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`}
                   className="rounded-full h-32 w-32"
+                  width={32} height={32}
                   alt="user icon"
                 >
                 </Image>
@@ -57,7 +58,11 @@ const UserInfo = () => {
           <div>
             <h2 className="text-4xl py-4">Discord User Search</h2>
             <form onSubmit={handleSubmit} className="">
-              <input className="border mx-1 px-0.5 py-1.5 outline-none rounded" type="text" onChange={handleInputChange}></input>
+              <input
+                className="border mx-1 px-0.5 py-1.5 outline-none rounded"
+                type="text" onChange={handleInputChange}
+                placeholder="ユーザーID"
+              ></input>
               <button className="bg-[#57F287] py-1.5 px-3 rounded">検索</button>
             </form>
           </div>
