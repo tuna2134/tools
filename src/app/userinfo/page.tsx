@@ -46,10 +46,11 @@ const UserInfo = () => {
                   <UserData name="アカウント作成日" value={user.created_at.toLocaleString("ja-JP")} />
                 </div>
                 <Image
-                  src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}?size=32`}
+                  src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}?size=1024`}
                   className="rounded h-32 w-32"
-                  width={32} height={32}
+                  width={1024} height={1024}
                   alt="user icon"
+                  quality={100}
                 >
                 </Image>
               </div>
