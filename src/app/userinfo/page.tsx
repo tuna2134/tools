@@ -5,7 +5,7 @@ import { FormEvent, ChangeEvent, useState } from "react"
 import UserData from "./_components"
 import Image from "next/image"
 
-async function convertSnowflakeToDate(snowflakeId: string): Promise<Date> {
+function convertSnowflakeToDate(snowflakeId: string): Date {
   let snowflakeNumber = BigInt(snowflakeId);
   let timestampBits = snowflakeNumber >> BigInt(22);
   let timestamp = Number(timestampBits) + 1420070400000;
@@ -27,7 +27,7 @@ const UserInfo = () => {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const user: User = await fetchUser(userid);
-    user.created_at = await convertSnowflakeToDate(user.id);
+    user.created_at = convertSnowflakeToDate(user.id);
     setUser(user);
     console.log(user);
   }
