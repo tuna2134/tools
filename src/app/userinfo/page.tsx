@@ -5,6 +5,13 @@ import { FormEvent, ChangeEvent, useState } from "react"
 import UserData from "./_components"
 import Image from "next/image"
 
+async function convertSnowflakeToDate(snowflakeId: string): Promise<Date> {
+  let snowflakeNumber = BigInt(snowflakeId);
+  let timestampBits = snowflakeNumber >> BigInt(22);
+  let timestamp = Number(timestampBits) + 1420070400000;
+  return new Date(timestamp);
+}
+
 const UserInfo = () => {
   const [userid, setUserid] = useState<string>("");
   const [user, setUser] = useState<User | null>(null);
@@ -20,6 +27,7 @@ const UserInfo = () => {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const user: User = await fetchUser(userid);
+    user.created_at = await convertSnowflakeToDate(user.id);
     setUser(user);
     console.log(user);
   }
@@ -43,7 +51,10 @@ const UserInfo = () => {
                   <UserData name="ユーザーID" value={user.id} />
                   <UserData name="ユーザータグ" value={user.discriminator} />
                   <UserData name="Botかどうか" value={user.bot ? "はい" : "いいえ"}/>
-                  <UserData name="アカウント作成日" value={user.created_at.toLocaleString("ja-JP")} />
+                  <UserData
+                    name="アカウント作成日"
+                    value={user.created_at ? user.created_at.toLocaleString("ja-JP") : "不明"}
+                  />
                 </div>
                 <Image
                   src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}?size=1024`}
