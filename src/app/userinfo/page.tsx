@@ -5,11 +5,6 @@ import { FormEvent, ChangeEvent, useState } from "react"
 import UserData from "./_components"
 import Image from "next/image"
 
-export const metadata = {
-  title: 'ユーザー検索 | tuna2134 tools',
-  description: 'Discordのユーザーを検索します。',
-}
-
 const UserInfo = () => {
   const [userid, setUserid] = useState<string>("");
   const [user, setUser] = useState<User | null>(null);
