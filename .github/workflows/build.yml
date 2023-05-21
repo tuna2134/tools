@@ -33,7 +33,7 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}
           cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache-new
+          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
       - name: Update cache
         if: steps.build-and-push.outputs.cache-hit != 'true'
         run: |
