@@ -41,10 +41,10 @@ const UserInfo = () => {
         ? (
           <div className="flex justify-center">
             <div>
-              <h2 className="text-4xl py-4">Discord User Search</h2>
+              <h2 className="text-4xl py-4 text-center">Discord User Search</h2>
               <br />
-              <div className="border rounded p-4 flex justify-around">
-                <div>
+              <div className="border rounded p-4 flex justify-center">
+                <div className="w-80">
                   <UserData name="ユーザー名" value={user.username} />
                   <UserData name="ユーザー名#タグ" value={`${user.username}#${user.discriminator}`} />
                   <UserData name="ディスプレイ名" value={user.display_name} />
