@@ -9,7 +9,15 @@ export interface User {
   avatar: string;
   display_name: string;
   bot: boolean;
+  created_at: Date;
 };
+
+async function convertSnowflakeToDate(snowflakeId: string): Promise<Date> {
+  let snowflakeNumber = BigInt(snowflakeId);
+  let timestampBits = snowflakeNumber >> BigInt(22);
+  let timestamp = Number(timestampBits) + 1420070400000;
+  return new Date(timestamp);
+}
 
 export const fetchUser = async (userid: string): Promise<User> => {
   const res = await axios.get(
@@ -21,5 +29,6 @@ export const fetchUser = async (userid: string): Promise<User> => {
       }
     }
   )
+  res.data.created_at = await convertSnowflakeToDate(res.data.id)
   return res.data
 }
