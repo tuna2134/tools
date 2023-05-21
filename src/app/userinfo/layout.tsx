@@ -2,7 +2,7 @@ import { ReactNode } from "react"
 
 export const metadata = {
   title: 'ユーザー検索｜tuna2134 tools',
-  description: 'Discordのユーザーを検索します。',
+  description: 'ユーザーIDを使って、Discordのユーザーを検索します。',
 };
 
 export default function RootLayout({
